@@ -40,7 +40,7 @@ export const UsersTable: React.FC<UsersTableProps> = memo(() => {
     {
       id: 'actions',
       disablePadding: false,
-      label: 'actions',
+      label: '',
     },
   ];
 
