@@ -1,9 +1,9 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import { MAIN_PAGE_ROUTE, USERS_PAGE_ROUTE } from './routes';
 import MainPage from 'pages/Main/Main';
 import UsersPage from 'pages/Users/Users';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: MAIN_PAGE_ROUTE,
     element: <MainPage />,
