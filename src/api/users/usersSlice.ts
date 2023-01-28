@@ -89,7 +89,10 @@ const usersSlice = createSlice({
   initialState,
   reducers: {
     userAdd(state, action) {
-      const lastId = JSON.parse(localStorage.getItem('users') as string).pop()?.id || 10; //for json placeholder behavior
+      const lastId =
+        (JSON.parse(localStorage.getItem('users') as string) as User[])
+          .sort((a, b) => a.id - b.id)
+          .pop()?.id || 10; //for json placeholder behavior
       const nextId = lastId <= 10 ? 11 : lastId + 1; //for json placeholder behavior
       state.list.push({ id: nextId, ...action.payload });
       localStorage.setItem('users', JSON.stringify(state.list));
@@ -122,18 +125,24 @@ const usersSlice = createSlice({
         state.list = [...users];
         localStorage.setItem('users', JSON.stringify(users));
       })
-      .addMatcher(isAnyOf(getUsers.pending, updateUser.pending, getUserById.pending, deleteUser.pending, addUser.pending), (state) => {
-        state.loading = true;
-      })
+      .addMatcher(
+        isAnyOf(getUsers.pending, updateUser.pending, getUserById.pending, deleteUser.pending, addUser.pending),
+        (state) => {
+          state.loading = true;
+        },
+      )
       .addMatcher(
         isAnyOf(getUsers.rejected, updateUser.rejected, getUserById.rejected, deleteUser.rejected, addUser.rejected),
         (state) => {
           state.loading = false;
         },
       )
-      .addMatcher(isAnyOf(updateUser.fulfilled, getUserById.fulfilled, deleteUser.fulfilled, addUser.fulfilled), (state) => {
-        state.loading = false;
-      });
+      .addMatcher(
+        isAnyOf(updateUser.fulfilled, getUserById.fulfilled, deleteUser.fulfilled, addUser.fulfilled),
+        (state) => {
+          state.loading = false;
+        },
+      );
   },
 });
 
