@@ -86,6 +86,7 @@ export const UsersTable: React.FC<UsersTableProps> = memo(() => {
           localStorage.removeItem('users');
           window.location.reload();
         }}
+        variant="outlined"
         sx={{ my: 1 }}
         disabled={loading}
       >

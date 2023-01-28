@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Link, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { USERS_PAGE_ROUTE } from 'app/router/routes';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,9 @@ const MainPage: React.FC<MainPageProps> = memo(() => {
   return (
     <>
       <Typography variant="h2">Main page</Typography>
-      <Link onClick={() => navigate(USERS_PAGE_ROUTE)}>go to users dashboard</Link>
+      <Button variant="outlined" sx={{ my: 1 }} onClick={() => navigate(USERS_PAGE_ROUTE)}>
+        go to users dashboard
+      </Button>
     </>
   );
 });
