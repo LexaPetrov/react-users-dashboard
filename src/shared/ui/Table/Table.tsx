@@ -14,10 +14,16 @@ import Paper from '@mui/material/Paper';
 import { visuallyHidden } from '@mui/utils';
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
-  if (b[orderBy] < a[orderBy]) {
+  let _a = (a as Record<string, string | number>)[orderBy as string];
+  let _b = (b as Record<string, string | number>)[orderBy as string];
+
+  if (typeof _a === 'string') _a = _a.toLowerCase();
+  if (typeof _b === 'string') _b = _b.toLowerCase();
+
+  if (_b < _a) {
     return -1;
   }
-  if (b[orderBy] > a[orderBy]) {
+  if (_b > _a) {
     return 1;
   }
   return 0;
@@ -187,7 +193,7 @@ export const Table: React.FC<TableProps> = ({ title, headCells, orderByColumn, r
           </MUITable>
           {!rows.length && (
             <Box sx={{ textAlign: 'center', mt: 2 }}>
-              <Typography variant='subtitle2'>nothing to show</Typography>
+              <Typography variant="subtitle2">nothing to show</Typography>
             </Box>
           )}
         </TableContainer>

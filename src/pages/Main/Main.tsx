@@ -11,7 +11,7 @@ const MainPage: React.FC<MainPageProps> = memo(() => {
   return (
     <>
       <Typography variant="h2">Main page</Typography>
-      <Link onClick={() => navigate(USERS_PAGE_ROUTE)}>go to users page</Link>
+      <Link onClick={() => navigate(USERS_PAGE_ROUTE)}>go to users dashboard</Link>
     </>
   );
 });
