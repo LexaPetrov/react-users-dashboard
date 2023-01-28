@@ -136,7 +136,10 @@ const EditUser: React.FC<EditUserProps> = memo(({ id }) => {
                 color="primary"
                 variant="outlined"
                 {...register('phone', {
-                  maxLength: 20,
+                  pattern: {
+                    value: /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
+                    message: 'Please enter a valid phone',
+                  },
                 })}
                 error={!!errors?.phone}
                 helperText={errors?.phone?.message}
@@ -181,7 +184,7 @@ const EditUser: React.FC<EditUserProps> = memo(({ id }) => {
                 color="primary"
                 variant="outlined"
                 {...register('address.zipcode', {
-                  maxLength: 10,
+                  maxLength: 15,
                 })}
                 error={!!errors?.address?.zipcode}
                 helperText={errors?.address?.zipcode?.message}
