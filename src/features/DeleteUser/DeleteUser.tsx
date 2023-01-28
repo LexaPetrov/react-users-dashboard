@@ -1,15 +1,15 @@
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'hooks';
 import React, { memo, useCallback, useState } from 'react';
-import { deleteUser, loadingSelector } from 'api/users/usersSlice';
-import { ConfirmModal } from 'components';
+import { deleteUser, loadingSelector } from 'entities/users/usersSlice';
+import { ConfirmModal } from 'shared/ui';
 import { Button } from '@mui/material';
+import { useAppDispatch } from 'entities/useAppDispatch';
 
 type DeleteUserProps = {
   id: number;
 };
 
-const DeleteUser: React.FC<DeleteUserProps> = memo(({ id }) => {
+export const DeleteUser: React.FC<DeleteUserProps> = memo(({ id }) => {
   const loading = useSelector(loadingSelector);
   const dispatch = useAppDispatch();
   const [open, setOpen] = useState(false);
@@ -34,5 +34,3 @@ const DeleteUser: React.FC<DeleteUserProps> = memo(({ id }) => {
     </>
   );
 });
-
-export default DeleteUser;

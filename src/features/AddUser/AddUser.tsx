@@ -1,10 +1,10 @@
 import React, { memo, useState, useEffect } from 'react';
-import { addUser } from 'api/users/usersSlice';
-import { useAppDispatch } from 'hooks';
-import { EditModal } from 'components';
+import { addUser } from 'entities/users/usersSlice';
+import { EditModal } from 'shared/ui';
 import { Button, Grid, TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { User } from 'api/users/entities';
+import { User } from 'entities/users/entities';
+import { useAppDispatch } from 'entities/useAppDispatch';
 
 type AddUserProps = {
   loading?: boolean;
@@ -15,7 +15,7 @@ const defaultValues = {
   email: '',
 };
 
-const AddUser: React.FC<AddUserProps> = memo(({ loading = false }) => {
+export const AddUser: React.FC<AddUserProps> = memo(({ loading = false }) => {
   const dispatch = useAppDispatch();
   const {
     register,
@@ -83,33 +83,3 @@ const AddUser: React.FC<AddUserProps> = memo(({ loading = false }) => {
     </>
   );
 });
-
-export default AddUser;
-
-/* 
-const form = useForm({
-    defaultValues: {
-      id: '',
-      name: '',
-      username: '',
-      email: '',
-      address: {
-        street: '',
-        suite: '',
-        city: '',
-        zipcode: '',
-        geo: {
-          lat: '',
-          lng: '',
-        },
-      },
-      phone: '',
-      website: '',
-      company: {
-        name: '',
-        catchPhrase: '',
-        bs: '',
-      },
-    },
-  });
-*/

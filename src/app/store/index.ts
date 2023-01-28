@@ -1,7 +1,7 @@
 import { configureStore, combineReducers, isRejectedWithValue } from '@reduxjs/toolkit';
 import type { Middleware } from "@reduxjs/toolkit";
-import usersReducer from 'api/users/usersSlice';
 import { toast } from 'react-toastify';
+import usersReducer from 'entities/users/usersSlice';
 
 const errorMiddleware: Middleware = () => (next) => (action) => {
   if (isRejectedWithValue(action)) {

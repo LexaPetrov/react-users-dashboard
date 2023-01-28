@@ -1,11 +1,11 @@
-import React, { memo, useEffect, useState } from 'react';
-import { getUserById, loadingSelector, updateUser } from 'api/users/usersSlice';
-import { useAppDispatch } from 'hooks';
-import { EditModal } from 'components';
-import { Button, Grid, Grow, TextField } from '@mui/material';
-import { useForm } from 'react-hook-form';
-import { User } from 'api/users/entities';
 import { useSelector } from 'react-redux';
+import { useForm } from 'react-hook-form';
+import React, { memo, useEffect, useState } from 'react';
+import { getUserById, loadingSelector, updateUser } from 'entities/users/usersSlice';
+import { EditModal } from 'shared/ui';
+import { Button, Grid, Grow, TextField } from '@mui/material';
+import { User } from 'entities/users/entities';
+import { useAppDispatch } from 'entities/useAppDispatch';
 
 type EditUserProps = {
   id: number;
@@ -34,7 +34,7 @@ const defaultValues = {
   },
 };
 
-const EditUser: React.FC<EditUserProps> = memo(({ id }) => {
+export const EditUser: React.FC<EditUserProps> = memo(({ id }) => {
   const loading = useSelector(loadingSelector);
   const dispatch = useAppDispatch();
   const {
@@ -297,5 +297,3 @@ const EditUser: React.FC<EditUserProps> = memo(({ id }) => {
     </>
   );
 });
-
-export default EditUser;

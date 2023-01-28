@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Link, Typography } from '@mui/material';
-import { USERS_PAGE_ROUTE } from 'router/routes';
+import { USERS_PAGE_ROUTE } from 'app/router/routes';
 import { useNavigate } from 'react-router-dom';
 
 type MainPageProps = unknown;

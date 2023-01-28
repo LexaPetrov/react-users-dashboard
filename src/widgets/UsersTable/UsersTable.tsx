@@ -1,10 +1,8 @@
 import React, { memo, ReactElement, useEffect, useState } from 'react';
-import { usersListSelector } from 'api/users/usersSlice';
+import { usersListSelector } from 'entities/users/usersSlice';
 import { useSelector } from 'react-redux';
-import { Table } from 'components';
-import DeleteUser from '../../features/DeleteUser/DeleteUser';
-import AddUser from '../../features/AddUser/AddUser';
-import EditUser from '../../features/EditUser/EditUser';
+import { Table } from 'shared/ui';
+import { DeleteUser, AddUser, EditUser } from 'features';
 import { Button } from '@mui/material';
 
 type UsersTableProps = unknown;
