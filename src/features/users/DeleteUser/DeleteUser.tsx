@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import React, { memo, useCallback, useState } from 'react';
-import { deleteUser, loadingSelector } from 'entities/users/usersSlice';
+import { deleteUser, loadingSelector } from 'features/users/store/usersSlice';
 import { ConfirmModal } from 'shared/ui';
 import { Button } from '@mui/material';
 import { useAppDispatch } from 'entities/useAppDispatch';

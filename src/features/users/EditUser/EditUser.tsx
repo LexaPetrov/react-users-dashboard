@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import React, { memo, useEffect, useState } from 'react';
-import { getUserById, loadingSelector, updateUser } from 'entities/users/usersSlice';
+import { getUserById, loadingSelector, updateUser } from 'features/users/store/usersSlice';
 import { EditModal } from 'shared/ui';
 import { Button, Grid, Grow, TextField } from '@mui/material';
-import { User } from 'entities/users/entities';
+import { User } from '../api/entities';
 import { useAppDispatch } from 'entities/useAppDispatch';
 
 type EditUserProps = {

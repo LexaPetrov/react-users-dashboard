@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import UsersTable from '../../widgets/UsersTable/UsersTable';
-import { getUsers } from 'entities/users/usersSlice';
+import { getUsers } from 'features/users/store/usersSlice';
 import { useAppDispatch } from 'entities/useAppDispatch';
 
 type UsersPageProps = unknown;

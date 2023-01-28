@@ -1,7 +1,7 @@
 import { createAsyncThunk, createDraftSafeSelector, createEntityAdapter, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { USERS_ADD_URL, USERS_DELETE_URL, USERS_MOCK_URL, USERS_SAVE_URL, USERS_URL } from './apiUrls';
-import { User } from './entities';
+import { USERS_ADD_URL, USERS_DELETE_URL, USERS_MOCK_URL, USERS_SAVE_URL, USERS_URL } from '../api/apiUrls';
+import { User } from '../api/entities';
 
 type State = {
   users: {

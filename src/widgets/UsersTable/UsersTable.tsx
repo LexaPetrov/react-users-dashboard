@@ -1,5 +1,5 @@
 import React, { memo, ReactElement, useEffect, useState } from 'react';
-import { usersListSelector } from 'entities/users/usersSlice';
+import { usersListSelector } from 'features/users/store/usersSlice';
 import { useSelector } from 'react-redux';
 import { Table } from 'shared/ui';
 import { DeleteUser, AddUser, EditUser } from 'features';

@@ -1,9 +1,9 @@
 import React, { memo, useState, useEffect } from 'react';
-import { addUser } from 'entities/users/usersSlice';
+import { addUser } from 'features/users/store/usersSlice';
 import { EditModal } from 'shared/ui';
 import { Button, Grid, TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { User } from 'entities/users/entities';
+import { User } from '../api/entities';
 import { useAppDispatch } from 'entities/useAppDispatch';
 
 type AddUserProps = {

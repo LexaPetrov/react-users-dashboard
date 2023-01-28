@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Container } from '@mui/material';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -12,7 +13,6 @@ import { CONFIG } from './config';
 import { store } from 'app/store';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/global.sass';
-import { Container } from '@mui/material';
 
 // react-query
 const queryClient = new QueryClient({
