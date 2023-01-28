@@ -7,7 +7,7 @@ import { Button } from '@mui/material';
 
 type UsersTableProps = unknown;
 
-const UsersTable: React.FC<UsersTableProps> = memo(() => {
+export const UsersTable: React.FC<UsersTableProps> = memo(() => {
   const [rows, setRows] = useState<Data[]>([]);
   const { list, loading } = useSelector(usersListSelector);
 
@@ -100,5 +100,3 @@ const UsersTable: React.FC<UsersTableProps> = memo(() => {
     </>
   );
 });
-
-export default UsersTable;

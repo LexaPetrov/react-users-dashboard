@@ -1,6 +1,6 @@
 import React, { memo, useEffect } from 'react';
 import { Typography } from '@mui/material';
-import UsersTable from '../../widgets/UsersTable/UsersTable';
+import { UsersTable } from 'widgets';
 import { getUsers } from 'features/users/store/usersSlice';
 import { useAppDispatch } from 'entities/useAppDispatch';
 
