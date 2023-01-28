@@ -83,7 +83,7 @@ export const UsersTable: React.FC<UsersTableProps> = memo(() => {
     <>
       <Button
         onClick={() => {
-          localStorage.clear();
+          localStorage.removeItem('users');
           window.location.reload();
         }}
         disabled={loading}
