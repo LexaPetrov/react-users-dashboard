@@ -1,4 +1,4 @@
-import { Modal, Box, Typography, Button } from '@mui/material';
+import { Modal, Box, Typography, Button, Stack } from '@mui/material';
 import React, { memo, ReactElement } from 'react';
 
 type EditModalProps = {
@@ -41,8 +41,14 @@ export const EditModal: React.FC<EditModalProps> = memo(
             {title}
           </Typography>
           {children}
-          <Button onClick={confirmAction}>{confirmButtonText}</Button>
-          <Button onClick={handleClose}>{cancelButtonText}</Button>
+          <Stack direction="row" spacing={2}>
+            <Button variant="contained" onClick={confirmAction}>
+              {confirmButtonText}
+            </Button>
+            <Button variant="outlined" onClick={handleClose}>
+              {cancelButtonText}
+            </Button>
+          </Stack>
         </Box>
       </Modal>
     );

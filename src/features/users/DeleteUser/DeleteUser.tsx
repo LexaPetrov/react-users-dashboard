@@ -21,7 +21,7 @@ export const DeleteUser: React.FC<DeleteUserProps> = memo(({ id }) => {
 
   return (
     <>
-      <Button disabled={loading} onClick={() => setOpen(true)}>
+      <Button disabled={loading} color="error" onClick={() => setOpen(true)}>
         delete
       </Button>
       <ConfirmModal

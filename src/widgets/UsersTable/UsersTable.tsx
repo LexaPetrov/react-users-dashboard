@@ -3,7 +3,7 @@ import { usersListSelector } from 'features/users/store/usersSlice';
 import { useSelector } from 'react-redux';
 import { Table } from 'shared/ui';
 import { DeleteUser, AddUser, EditUser } from 'features';
-import { Button } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 
 type UsersTableProps = unknown;
 
@@ -61,10 +61,10 @@ export const UsersTable: React.FC<UsersTableProps> = memo(() => {
       email,
       city,
       actions: (
-        <>
+        <Stack direction={'row'} spacing={1}>
           <EditUser id={id} />
           <DeleteUser id={id} />
-        </>
+        </Stack>
       ),
     };
   }
@@ -86,6 +86,7 @@ export const UsersTable: React.FC<UsersTableProps> = memo(() => {
           localStorage.removeItem('users');
           window.location.reload();
         }}
+        sx={{ my: 1 }}
         disabled={loading}
       >
         clear localStorage and refresh page

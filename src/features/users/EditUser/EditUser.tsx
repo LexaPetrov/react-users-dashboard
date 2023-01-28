@@ -64,18 +64,18 @@ export const EditUser: React.FC<EditUserProps> = memo(({ id }) => {
 
   return (
     <>
-      <Button sx={{ minWidth: 'auto' }} disabled={loading} onClick={() => setOpen(true)}>
+      <Button
+        sx={{ minWidth: 'auto' }}
+        disabled={loading}
+        color="warning"
+        variant="outlined"
+        onClick={() => setOpen(true)}
+      >
         edit
       </Button>
       <EditModal open={open} handleClose={() => setOpen(false)} title={'Edit user'} confirmAction={onConfirm}>
-        <Grow in={!loading} style={{ transformOrigin: '0 0 0' }} {...(!loading ? { timeout: 500 } : {})}>
-          <Grid
-            container
-            maxWidth={'md'}
-            sx={{ padding: '10px' }}
-            rowSpacing={2}
-            columnSpacing={{ xs: 1, sm: 1, md: 1 }}
-          >
+        <Grow in={!loading} style={{ transformOrigin: '0 0 0' }} {...(!loading ? { timeout: 300 } : {})}>
+          <Grid container maxWidth={'md'} sx={{ my: 2 }} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
             <Grid item xs={12} sm={6}>
               <TextField
                 focused

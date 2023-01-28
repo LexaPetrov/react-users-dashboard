@@ -1,4 +1,4 @@
-import { Modal, Box, Typography, Button } from '@mui/material';
+import { Modal, Box, Typography, Button, Stack } from '@mui/material';
 import React, { memo } from 'react';
 
 type ConfirmModalProps = {
@@ -43,8 +43,14 @@ export const ConfirmModal: React.FC<ConfirmModalProps> = memo(
           <Typography id="modal-modal-description" sx={{ my: 2 }}>
             {text}
           </Typography>
-          <Button onClick={confirmAction}>{confirmButtonText}</Button>
-          <Button onClick={handleClose}>{cancelButtonText}</Button>
+          <Stack direction="row" spacing={2}>
+            <Button variant="contained" onClick={confirmAction}>
+              {confirmButtonText}
+            </Button>
+            <Button variant="outlined" onClick={handleClose}>
+              {cancelButtonText}
+            </Button>
+          </Stack>
         </Box>
       </Modal>
     );

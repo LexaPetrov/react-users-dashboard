@@ -19,7 +19,7 @@ type ThemeProviderProps = {
 };
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const theme = localStorage.getItem('theme') || 'light';
+  const theme = localStorage.getItem('theme') || 'dark';
   const [mode, setMode] = useState(theme);
 
   const selectedTheme = mode === 'dark' ? darkTheme : lightTheme;

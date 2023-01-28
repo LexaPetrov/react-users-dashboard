@@ -2,6 +2,7 @@ import React, { memo, useState, useEffect } from 'react';
 import { addUser } from 'features/users/store/usersSlice';
 import { EditModal } from 'shared/ui';
 import { Button, Grid, TextField } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 import { useForm } from 'react-hook-form';
 import { User } from '../api/entities';
 import { useAppDispatch } from 'entities/useAppDispatch';
@@ -38,11 +39,11 @@ export const AddUser: React.FC<AddUserProps> = memo(({ loading = false }) => {
 
   return (
     <>
-      <Button disabled={loading} onClick={() => setOpen(true)}>
+      <Button disabled={loading} onClick={() => setOpen(true)}  startIcon={<AddIcon />}>
         add user
       </Button>
       <EditModal open={open} handleClose={() => setOpen(false)} title={'Add new user'} confirmAction={onConfirm}>
-        <Grid container maxWidth={'sm'} sx={{ padding: '10px' }} rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+        <Grid container maxWidth={'sm'} sx={{ my: 2 }} rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
           <Grid item xs={12} sm={12}>
             <TextField
               focused
